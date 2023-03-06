@@ -112,7 +112,7 @@ Al finalizar hay que comprobar que la aplicación está bien traducida al españ
 
 Sin embargo (esto es algo que puede pasar en muchos proyectos Xcode) vemos que la pestaña Almacenamiento, aunque teóricamente está traducida, tiene la palabra `Available` en lugar de `Disponible`. Esto quiere decir que esta cadena está fuera de `Main.storyboard (English)` y por ello no fue extraída cuando se generó el archivo `Main.strings (Spanish)`.
 
-El proyecto Xcode de About This Hack utiliza swift como lenguaje principal de programación. Lo que nos obliga a buscar en los archivos swift hasta encontrar el sitio en que se crea la cadena Available para buscar alguna manera de traducirla. Y la encontramos en el archivo `HardwareCollector.swift`, en la línea 179:
+El proyecto Xcode de About This Hack utiliza swift como lenguaje principal de programación. Lo que nos obliga a buscar en los archivos swift hasta encontrar el sitio en que se crea la cadena `Available` para buscar alguna manera de traducirla. Y la encontramos en el archivo `HardwareCollector.swift`, en la línea 179:
 
 ```swift
         print("%: \(1-percent)")
