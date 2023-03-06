@@ -49,11 +49,11 @@ Junto a los idiomas hay un pequeño desplegable con 2 opciones: `Interface Build
 * `Localizable Strings` crea un archivo Main.strings que contiene las cadenas que Xcode extrae desde Main.storyboard (English)), es un archivo de texto con pares de cadenas, a la izquierda la referencia a la cadena original y a la derecha la traducción (que haremos manualmente).
 * `Interface Builder Storyboard `duplica Main.storyboard para manteniendo la versión inglesa original y añadiendo la versión española, la inglesa se deja tal cual y la española se modifica a nuestro gusto.
 
-### Comenzar con `Main.Strings`
+### Comenzar con Main.Strings
 
 En mi caso el mejor resultado lo he obtenido empezando con la opción del archivo `Main.strings`, traduciendo las cadenas de forma sencilla y cambiando después al modo `Interface Builder Storyboard` para terminar retocando `Main.storyboard`. No siempre coincide la longitud de las cadenas en los 2 idiomas y algunos textos pueden verse truncados, por lo que después de preparar `Main.strings (Spanish)` termino con `Interface Builder Storyboard`.
 
-Por defecto Xcode trabaja con Interface Builder >> lo cambiamos en el desplegable a Localizable Strings >> un diálogo informa de la creación de Main.strings y de la eliminación de Main.storyboard (Spanish) que acba de ser generado >> pulsas Convert.
+Por defecto Xcode trabaja con `Interface Builder Soryboard` >> lo cambiamos en el desplegable a `Localizable Strings` >> un diálogo informa de la creación de `Main.strings` y de la eliminación de `Main.storyboard (Spanish)` que acaba de ser generado >> pulsas Convert.
 
 Este es el aspecto de Main.strings:
 
