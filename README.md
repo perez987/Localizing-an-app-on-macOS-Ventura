@@ -1,6 +1,6 @@
 # Traducir una aplicación en macOS Ventura con Xcode 14
 
-**Cómo traducir al español una aplicación sencilla que está por defecto en inglés, este es el idioma de desarrollo (_developer language_) y no es necesario cambiarlo, solamente añadir los archivos requeridos para traducir la interfaz de usuario. He escogido [About This Mac](https://github.com/0xCUB3/About-This-Hack) de *0xCUB3*, aplicación que simula el aspecto de la conocida Acerca de Este Mac (About This Mac) con algunas mejoras. Es un proyecto de Xcode que utiliza swift como lenguaje de programación y cuya estructura no es excesivamente complicada para iniciarse en esta actividad.**
+**Cómo traducir al español una aplicación sencilla que está por defecto en inglés, este es el idioma de desarrollo (_developer language_) y no es necesario cambiarlo, solamente añadir los archivos requeridos para traducir la interfaz de usuario. He escogido [About This Mac](https://github.com/0xCUB3/About-This-Hack) de *0xCUB3*, aplicación que simula el aspecto de la clásica Acerca de este Mac (About This Mac) anterior a macOS 13 con algunas mejoras. Es un proyecto de Xcode que utiliza swift como lenguaje de programación y cuya estructura no es excesivamente complicada para iniciarse en esta actividad.**
 
 ### Pasos previos
 
