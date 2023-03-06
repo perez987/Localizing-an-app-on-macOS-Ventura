@@ -1,0 +1,1 @@
+# Traducir-app-en-macOS
