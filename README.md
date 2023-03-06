@@ -28,7 +28,7 @@ El proyecto en origen está firmado digitalmente por su creador pero no es posib
 
 ### Habilitar las traducciones en el proyecto
 
-Lo que se necesita traducir es primordialmente la interfaz de usuario que está en el archivo `Main.storyboard`. Hay que habilitar la localización de este archivo. Para ello lo seleccionas >> File Inspector >> primera pestaña Identy and Type >> pulsar en el botón `Localize...` >> un cuadro de diálogo solicita elegir el idioma para el que se creará una carpeta `lproj >> eliges English (Base no).
+Lo que se necesita traducir es primordialmente la interfaz de usuario que está en el archivo `Main.storyboard`. Hay que habilitar la localización de este archivo. Para ello lo seleccionas >> File Inspector >> primera pestaña Identy and Type >> pulsar en el botón `Localize...` >> un cuadro de diálogo solicita elegir el idioma para el que se creará una carpeta `lproj` >> eliges English (Base no).
 
 <img width="360" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize1.png">
 
@@ -40,7 +40,7 @@ Ve a `PROJECT >> About This Hack >> Info >> Localizations` >> pulsas en + para a
 
 <img width="720" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize4.png">
 
-En File Inspector de Main.storyboard ahora hay 2 idiomas, English y Spanish.
+En File Inspector de `Main.storyboard` ahora hay 2 idiomas, English y Spanish.
 
 <img width="360" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize5.png">
 
