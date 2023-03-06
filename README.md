@@ -53,7 +53,7 @@ Junto a los idiomas hay un pequeño desplegable con 2 opciones: `Interface Build
 
 En mi caso el mejor resultado lo he obtenido empezando con la opción del archivo `Main.strings`, traduciendo las cadenas de forma sencilla y cambiando después al modo `Interface Builder Storyboard` para terminar retocando `Main.storyboard`. No siempre coincide la longitud de las cadenas en los 2 idiomas y algunos textos pueden verse truncados, por lo que después de preparar `Main.strings (Spanish)` termino con `Interface Builder Storyboard`.
 
-Por defecto Xcode trabaja con `Interface Builder Soryboard` >> lo cambiamos en el desplegable a `Localizable Strings` >> un diálogo informa de la creación de `Main.strings` y de la eliminación de `Main.storyboard (Spanish)` que acaba de ser generado >> pulsas Convert.
+Por defecto Xcode trabaja con `Interface Builder Storyboard` >> lo cambiamos en el desplegable a `Localizable Strings` >> un diálogo informa de la creación de `Main.strings` y de la eliminación de `Main.storyboard (Spanish)` que acaba de ser generado >> pulsas Convert.
 
 Este es el aspecto de Main.strings:
 
@@ -108,7 +108,7 @@ Al finalizar hay que comprobar que la aplicación está bien traducida al españ
 <img width="640" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/43-discos.png">
 <img width="640" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/44-soporte.png">
 
-### Cadenas fuera de 'Main.storyboard' (opcional)
+### Cadenas fuera de _Main.storyboard_ (opcional)
 
 Sin embargo (esto es algo que puede pasar en muchos proyectos Xcode) vemos que la pestaña Almacenamiento, aunque teóricamente está traducida, tiene la palabra `Available` en lugar de `Disponible`. Esto quiere decir que esta cadena está fuera de `Main.storyboard (English)` y por ello no fue extraída cuando se generó el archivo `Main.strings (Spanish)`.
 
