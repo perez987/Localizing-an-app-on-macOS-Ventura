@@ -30,7 +30,7 @@ The original project is digitally signed by its developer but it is not possible
 
 ### Enable localization in the project
 
-What needs to be translated is primarily the user interface that is in the `Main.storyboard` file. You must enable the localization of this file. To do this, select it >> `File Inspector` >> first `Identity and Type `tab >> click on the `Localize... `button >> a dialog box asks to choose the language for which an `lproj` folder will be created >> choose English.
+What needs to be translated is primarily the user interface that is in the `Main.storyboard` file. You must enable the localization of this file. To do this, select it >> `File Inspector` >> first `Identity and Type` tab >> click on the `Localize...` button >> a dialog box asks to choose the language for which an `lproj` folder will be created >> choose English.
 
 <img width="360" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize1.png">
 
@@ -38,7 +38,7 @@ Going back to the `Main.storyboard File Inspector` >> `Identity and Type` tab >>
 
 <img width="360" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize3.png">
 
-Go to `PROJECT >> About This Hack >> Info >> Localizations` >> click on + to add another language >> choose the language you want to add, I have done it with `Spanish (es) `>> a dialog appears to choose the files that are going to be localized to the new language, for now we only see `Main.storyboard`>> `Finish`.
+Go to `PROJECT >> About This Hack >> Info >> Localizations` >> click on + to add another language >> choose the language you want to add, I have done it with `Spanish (es)` >> a dialog appears to choose the files that are going to be localized to the new language, for now we only see `Main.storyboard`>> `Finish`.
 
 <img width="720" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize4.png">
 
@@ -49,7 +49,7 @@ In `Main.storyboard File Inspector`there are now 2 languages, English and Spanis
 Next to the languages there is a small dropdown with 2 options: `Interface Builder Storyboard` and `Localizable Strings`:
 
 * `Localizable Strings` creates a file `Main.strings` that contains the strings extracted by Xcode from `Main.storyboard (English)`, it is a text file with pairs of strings, on the left the reference to the original string and on the right the translation (which we will do manually).
-* `Interface Builder Storyboard `duplicates `Main.storyboard` to keep the original English version and add the Spanish version, the English one is left as is and the Spanish one is modified to our liking.
+* `Interface Builder Storyboard` duplicates `Main.storyboard` to keep the original English version and add the Spanish version, the English one is left as is and the Spanish one is modified to our liking.
 
 ### Start with `Main.Strings`
 
@@ -85,18 +85,18 @@ At this point we continue with this file, translating all the English strings in
 
 ### Continue with `Main.storyboard`
 
-With `Main.strings` fully translated, switch the file to `Interface Builder Storyboard `mode in `File Inspector` >> dropdown menu to the right of Spanish >> change `Localizable Strings` to `Interface Builder Storyboard` >> a dialog prompts that `Main.strings` will be converted to `Main.storyboard` and removed from the project.
+With `Main.strings` fully translated, switch the file to `Interface Builder Storyboard` mode in `File Inspector` >> dropdown menu to the right of Spanish >> change `Localizable Strings` to `Interface Builder Storyboard` >> a dialog prompts that `Main.strings` will be converted to `Main.storyboard` and removed from the project.
 
 `Main.storyboard (Spanish)` shows the application windows with all the strings that we have previously translated to Spanish in `Main.strings`.
 
 The next and probably the most laborious step is to go through the windows, text boxes, buttons, labels, etc., to detect which elements have truncated text and fix it. We must modify the size of some elements, check that they do not get out of the layout in the correlative positions, it is even probable that we will change some translation extracted from `Main.strings` to make it match better with the graphical interface.
 
-For example, just created `Main.storyboard (English)` >> `Scene Summary `window >> the string `Disco de Arranque` is truncated because it is longer than the containing text box:
+For example, just created `Main.storyboard (English)` >> `Scene Summary` window >> the string `Disco de Arranque` is truncated because it is longer than the containing text box:
 
 <img width="420" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize6.png">
 <img width="420" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize7.png">
 
-There are 2 options: change the `Disco de Arranque `text to make it shorter or increase the width of the text box until the entire string is visible. If the width of this element is changed, the text box to the right of it (the one that will show the name of the boot disk) must be adjusted so that they do not overlap. Do the same for any other strings that are truncated or mismatched in some way:
+There are 2 options: change the `Disco de Arranque` text to make it shorter or increase the width of the text box until the entire string is visible. If the width of this element is changed, the text box to the right of it (the one that will show the name of the boot disk) must be adjusted so that they do not overlap. Do the same for any other strings that are truncated or mismatched in some way:
 
 <img width="420" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize8.png">
 <img width="420" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize9.png">
@@ -114,7 +114,7 @@ At the end it is necessary to verify that the application is well translated int
 
 However (this is something that can happen in many Xcode projects) we see that the `Storage` tab, although theoretically localized, has the word `Available` instead of `Disponible`. This means that this string is outside `Main.storyboard (English)` and was therefore not extracted when the `Main.strings (Spanish)` file was generated.
 
-About This Hack's Xcode project uses swift as its primary programming language. Which forces us to search through the swift files until we find the place where the `Available` string is to find a way to localize it. We find it in the `HardwareCollector.swift `file, on line 179:
+About This Hack's Xcode project uses swift as its primary programming language. Which forces us to search through the swift files until we find the place where the `Available` string is to find a way to localize it. We find it in the `HardwareCollector.swift` file, on line 179:
 
 ```swift
         print("%: \(1-percent)")
@@ -124,7 +124,7 @@ About This Hack's Xcode project uses swift as its primary programming language. 
 """,String(1-percent)]
 ```
     
-A way is needed to obtain the language in which the application runs so that `Available` is in the English version and `Disponible` in the Spanish version. Swift has a method `Bundle.main.preferredLocalizations[]` that contains the available localizations in the app, it is an array whose first element `[0]` is the current language in which the program runs. With this method and an `if...else `expression it is possible to achieve the desired result. The previous code is replaced by this one:
+A way is needed to obtain the language in which the application runs so that `Available` is in the English version and `Disponible` in the Spanish version. Swift has a method `Bundle.main.preferredLocalizations[]` that contains the available localizations in the app, it is an array whose first element `[0]` is the current language in which the program runs. With this method and an `if...else` expression it is possible to achieve the desired result. The previous code is replaced by this one:
 
 ```swift
         print("%: \(1-percent)")              
