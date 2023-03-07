@@ -1,4 +1,4 @@
-# Localize an app on macOS Ventura with Xcode 14
+# Localizing apps on macOS Ventura with Xcode 14
 
 [Spanish version](README-es.md)
 
