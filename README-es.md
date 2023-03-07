@@ -23,7 +23,7 @@ Descarga el proyecto en formato ZIP desde su sitio de [GitHub](https://github.co
 El proyecto en origen está firmado digitalmente por su creador pero no es posible usarlo así en nuestro PC. Ve a `TARGETS >> About This Hack >> Signing and Capabilities`:
 
 * Desmarca `Automatically manage Signing`
-* Selecciona `Sign to Run Locally `en Signing Certificate.
+* Selecciona `Sign to Run Locally` en Signing Certificate.
 * De esta forma evitas avisos de error durante el proceso de traducción.
 
 <img width="720" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/2-signing.png">
@@ -38,7 +38,7 @@ Volviendo a File Inspector de `Main.storyboard` >> pestaña Identy and Type >> v
 
 <img width="360" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize3.png">
 
-Ve a `PROJECT >> About This Hack >> Info >> Localizations` >> pulsa en + para añadir otro idioma >> elige el idioma que deseas añadir, yo lo he hecho con Spanish (es) >> aparece un diálogo para elegir los archivos que se van a localizar al nuevo idioma, en este caso solamente vemos `Main.storyboard` >> Finish.
+Ve a `PROJECT >> About This Hack >> Info >> Localizations` >> pulsa en + para añadir otro idioma >> elige el idioma que deseas añadir, yo lo he hecho con Spanish (es) >> aparece un diálogo para elegir los archivos que se van a localizar al nuevo idioma, en este caso solamente vemos `Main.storyboard` >> `Finish`.
 
 <img width="720" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/3-localize4.png">
 
@@ -51,9 +51,9 @@ Junto a los idiomas hay un pequeño desplegable con 2 opciones: `Interface Build
 * `Localizable Strings` crea un archivo Main.strings que contiene las cadenas que Xcode extrae desde `Main.storyboard (English)`, es un archivo de texto con pares de cadenas, a la izquierda la referencia a la cadena original y a la derecha la traducción (que haremos manualmente).
 * `Interface Builder Storyboard` duplica `Main.storyboard` para manteniendo la versión inglesa original y añadiendo la versión española, la inglesa se deja tal cual y la española se modifica a nuestro gusto.
 
-### Comenzar con Main.Strings
+### Comenzar con `Main.Strings`
 
-En mi caso el mejor resultado lo he obtenido empezando con la opción del archivo `Main.strings`, traduciendo las cadenas de forma sencilla y cambiando después al modo `Interface Builder Storyboard` para terminar retocando `Main.storyboard`. No siempre coincide la longitud de las cadenas en los 2 idiomas y algunos textos pueden verse truncados, por lo que después de preparar `Main.strings (Spanish)` termino con `Interface Builder Storyboard`.
+En mi caso el mejor resultado lo he obtenido empezando con la opción `Main.strings`, traduciendo las cadenas de forma sencilla y cambiando después al modo `Interface Builder Storyboard` para terminar retocando `Main.storyboard`. No siempre coincide la longitud de las cadenas en los 2 idiomas y algunos textos pueden verse truncados, por lo que después de preparar `Main.strings (Spanish)` termino con `Interface Builder Storyboard`.
 
 Por defecto Xcode trabaja con `Interface Builder Storyboard` >> lo cambiamos en el desplegable a `Localizable Strings` >> un diálogo informa de la creación de `Main.strings` y de la eliminación de `Main.storyboard (Spanish)` que acaba de ser generado >> pulsas Convert.
 
@@ -70,7 +70,7 @@ Este es el aspecto de `Main.strings`:
 "3AK-j7-ksI.title" = "Support";
 ```
 
-En este punto continuamos con este archivo, traduciendo al español todas las cadenas en inglés hasta completar la tarea:
+En este punto continuamos con este archivo, traduciendo al español todas las cadenas inglesas hasta completar la tarea:
 
 ```c
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
@@ -85,9 +85,9 @@ En este punto continuamos con este archivo, traduciendo al español todas las ca
 
 ### Continuar con `Main.storyboard`
 
-Con `Main.strings` completamente traducido, hay que cambiar el archivo al modo `Interface Builder Storyboard` en File Inspector >> menú desplegable a la derecha de Spanish >> Cambiar `Localizable Strings` a `Interface Builder Storyboard` >> un diálogo avisa de que `Main.strings` será convertido a `Main.storyboard` y eliminado del proyecto.
+Con `Main.strings` completamente traducido, hay que cambiar el archivo al modo `Interface Builder Storyboard` en File Inspector >> menú desplegable a la derecha de Spanish >> cambiar `Localizable Strings` a `Interface Builder Storyboard` >> un diálogo avisa de que `Main.strings` será convertido a `Main.storyboard` y eliminado del proyecto.
 
-`Main.storyboard (Spanish)` muestra las ventanas de la aplicación con todas las cadenas que hayamos traducido anteriormente en `Main.strings` en español.
+`Main.storyboard (Spanish)` muestra las ventanas de la aplicación con todas las cadenas que hayamos traducido anteriormente en `Main.strings` al español.
 
 El paso siguiente y probablemente el más laborioso es repasar las ventanas, cuadros de texto, botones, etiquetas, etc., para detectar qué elementos tienen el texto truncado y arreglarlo. Hay que modificar el tamaño de algunos elementos, repasar que no se desajustan del diseño en la posición correlativa que ocupan, incluso es probable que cambiemos alguna traducción extraída de `Main.strings` para hacerla coincidir mejor con la interfaz gráfica.
 
@@ -110,11 +110,11 @@ Al finalizar hay que comprobar que la aplicación está bien traducida al españ
 <img width="640" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/43-discos.png">
 <img width="640" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/44-soporte.png">
 
-### Cadenas fuera de _Main.storyboard_ (opcional)
+### Cadenas fuera de `Main.storyboard` (opcional)
 
 Sin embargo (esto es algo que puede pasar en muchos proyectos Xcode) vemos que la pestaña Almacenamiento, aunque teóricamente está traducida, tiene la palabra `Available` en lugar de `Disponible`. Esto quiere decir que esta cadena está fuera de `Main.storyboard (English)` y por ello no fue extraída cuando se generó el archivo `Main.strings (Spanish)`.
 
-El proyecto Xcode de About This Hack utiliza swift como lenguaje principal de programación. Lo que nos obliga a buscar en los archivos swift hasta encontrar el sitio en que se crea la cadena `Available` para buscar alguna manera de traducirla. La encontramos en el archivo `HardwareCollector.swift`, en la línea 179:
+El proyecto Xcode de About This Hack utiliza swift como lenguaje principal de programación. Lo que nos obliga a buscar en los archivos swift hasta encontrar el sitio en que está la cadena `Available` para buscar alguna manera de traducirla. La encontramos en el archivo `HardwareCollector.swift`, en la línea 179:
 
 ```swift
         print("%: \(1-percent)")
