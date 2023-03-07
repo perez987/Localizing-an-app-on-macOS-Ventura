@@ -153,6 +153,6 @@ Ahora vemos que la pestaña Almacenamiento tiene la palabra `Disponible` y no `A
 
 <img width="640" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/43-discos-es.png">
 
-### Get the project already localized to Spanish
+### Obtener el proyecto ya traducido al español
 
 [About This Hack](https://github.com/perez987/About-This-Hack)
