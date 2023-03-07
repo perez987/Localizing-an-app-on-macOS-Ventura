@@ -152,3 +152,7 @@ Se necesita una forma de obtener el idioma en que arranca la aplicación para qu
 Ahora vemos que la pestaña Almacenamiento tiene la palabra `Disponible` y no `Available`, como corresponde al idioma español:
 
 <img width="640" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/43-discos-es.png">
+
+### Get the project already localized to Spanish
+
+[About This Hack](https://github.com/perez987/About-This-Hack)
