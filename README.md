@@ -155,6 +155,6 @@ Now we see that the `Storage` tab has the word `Disponible` and not `Available`,
 
 <img width="640" src="https://github.com/perez987/Traducir-app-en-macOS/blob/main/img/43-discos-es.png">
 
-### Get the project already localized to Spanish
+### Get the app localized to Spanish
 
-[About This Hack](https://github.com/perez987/About-This-Hack)
+[About This Hack](https://perez987.es/wp-content/uploads/2023/03/About-This-Hack.zip)
