@@ -6,7 +6,7 @@
 
 ### Prerequisites
 
-You must have Xcode installed, I have used version 14.1 but it should work in previous versions as long as you use swift version 5 or higher. How to know the version of swift installed? From Terminal:
+You must have Xcode installed, I have used version 14.1 but it should work in previous versions as long as you use swift version 5 or higher. How to know swift version? From Terminal:
 
 ```bash
 /Users/yo > swift -version
